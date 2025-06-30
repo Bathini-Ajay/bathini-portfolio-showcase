@@ -1,62 +1,45 @@
 
 import React, { useState } from 'react';
-import { User, FileText, Code, Award } from 'lucide-react';
 
 const MainContent = () => {
-  const [activeTab, setActiveTab] = useState('about');
+  const [activeTab, setActiveTab] = useState('resume');
 
   const tabs = [
-    { id: 'about', label: 'About Me', icon: User },
-    { id: 'resume', label: 'Resume', icon: FileText },
-    { id: 'projects', label: 'Projects', icon: Code },
-    { id: 'certifications', label: 'Certifications', icon: Award },
+    { id: 'about', label: 'About' },
+    { id: 'resume', label: 'Resume' },
+    { id: 'portfolio', label: 'Portfolio' },
+    { id: 'certifications', label: 'Certifications' },
   ];
 
   const renderContent = () => {
     switch (activeTab) {
       case 'about':
         return (
-          <div className="animate-fade-in">
-            <h2 className="text-3xl font-bold mb-6 text-primary">About Me</h2>
-            <div className="space-y-6">
-              <div className="bg-card p-6 rounded-lg border border-border">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Career Objective</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  To secure a challenging and responsible career in a company where I can effectively 
-                  contribute my skills and knowledge to achieve great heights.
-                </p>
-              </div>
-              
-              <div className="bg-card p-6 rounded-lg border border-border">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Technical Skills</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <h4 className="font-medium mb-2 text-foreground">Programming</h4>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Java</span>
-                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">JDBC</span>
-                    </div>
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-4xl font-bold mb-6">About Me</h2>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                To secure a challenging and responsible career in a company where I can effectively 
+                contribute my skills and knowledge to achieve great heights.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-2xl font-bold mb-6">Technical Skills</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-lg font-semibold mb-3 text-yellow-400">Programming</h4>
+                  <div className="space-y-2">
+                    <span className="inline-block bg-gray-700 px-3 py-1 rounded-full text-sm">Java</span>
+                    <span className="inline-block bg-gray-700 px-3 py-1 rounded-full text-sm ml-2">JDBC</span>
                   </div>
-                  <div>
-                    <h4 className="font-medium mb-2 text-foreground">Web Technologies</h4>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">HTML</span>
-                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">CSS</span>
-                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">JavaScript</span>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-medium mb-2 text-foreground">Database</h4>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">MySQL</span>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-medium mb-2 text-foreground">Tools & OS</h4>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">MS Office</span>
-                      <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Windows</span>
-                    </div>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold mb-3 text-yellow-400">Web Technologies</h4>
+                  <div className="space-y-2">
+                    <span className="inline-block bg-gray-700 px-3 py-1 rounded-full text-sm">HTML</span>
+                    <span className="inline-block bg-gray-700 px-3 py-1 rounded-full text-sm ml-2">CSS</span>
+                    <span className="inline-block bg-gray-700 px-3 py-1 rounded-full text-sm ml-2">JavaScript</span>
                   </div>
                 </div>
               </div>
@@ -66,92 +49,100 @@ const MainContent = () => {
       
       case 'resume':
         return (
-          <div className="animate-fade-in">
-            <h2 className="text-3xl font-bold mb-6 text-primary">Education</h2>
-            <div className="space-y-6">
-              <div className="bg-card p-6 rounded-lg border border-border">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground">Bachelor of Technology - CSE</h3>
-                    <p className="text-primary font-medium">Pace Institute of Technology and Science</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-muted-foreground">2019 – 2023</p>
-                    <p className="text-primary font-bold">GPA: 7.8</p>
-                  </div>
-                </div>
+          <div className="space-y-12">
+            <div>
+              <h2 className="text-4xl font-bold mb-2">Resume</h2>
+              <div className="w-12 h-1 bg-yellow-400 mb-8"></div>
+            </div>
+            
+            <div>
+              <div className="flex items-center mb-6">
+                <div className="w-6 h-6 bg-yellow-400 rounded-sm mr-4"></div>
+                <h3 className="text-2xl font-bold">Education</h3>
               </div>
               
-              <div className="bg-card p-6 rounded-lg border border-border">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground">Intermediate - MPC</h3>
-                    <p className="text-primary font-medium">M.S.R Junior College</p>
+              <div className="space-y-8">
+                <div className="border-l-2 border-gray-600 pl-6 relative">
+                  <div className="absolute -left-2 top-0 w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="text-xl font-semibold text-white">Bachelor of Technology - CSE</h4>
+                      <p className="text-yellow-400">Pace Institute of Technology and Science</p>
+                    </div>
+                    <span className="text-gray-400">2019 — 2023</span>
                   </div>
-                  <div className="text-right">
-                    <p className="text-muted-foreground">2017 – 2019</p>
-                    <p className="text-primary font-bold">GPA: 9.86</p>
-                  </div>
+                  <p className="text-gray-300 mb-2">GPA: 7.8</p>
                 </div>
-              </div>
-              
-              <div className="bg-card p-6 rounded-lg border border-border">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground">Secondary School Certificate</h3>
-                    <p className="text-primary font-medium">Z.P High School</p>
+                
+                <div className="border-l-2 border-gray-600 pl-6 relative">
+                  <div className="absolute -left-2 top-0 w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="text-xl font-semibold text-white">Intermediate - MPC</h4>
+                      <p className="text-yellow-400">M.S.R Junior College</p>
+                    </div>
+                    <span className="text-gray-400">2017 — 2019</span>
                   </div>
-                  <div className="text-right">
-                    <p className="text-muted-foreground">2015 – 2017</p>
-                    <p className="text-primary font-bold">GPA: 8.5</p>
+                  <p className="text-gray-300 mb-2">GPA: 9.86</p>
+                </div>
+                
+                <div className="border-l-2 border-gray-600 pl-6 relative">
+                  <div className="absolute -left-2 top-0 w-4 h-4 bg-yellow-400 rounded-full"></div>
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="text-xl font-semibold text-white">Secondary School Certificate</h4>
+                      <p className="text-yellow-400">Z.P High School</p>
+                    </div>
+                    <span className="text-gray-400">2015 — 2017</span>
                   </div>
+                  <p className="text-gray-300 mb-2">GPA: 8.5</p>
                 </div>
               </div>
             </div>
           </div>
         );
       
-      case 'projects':
+      case 'portfolio':
         return (
-          <div className="animate-fade-in">
-            <h2 className="text-3xl font-bold mb-6 text-primary">Projects</h2>
-            <div className="bg-card p-6 rounded-lg border border-border">
-              <h3 className="text-2xl font-semibold mb-4 text-foreground">Real-Time Banking Application</h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-4xl font-bold mb-2">Portfolio</h2>
+              <div className="w-12 h-1 bg-yellow-400 mb-8"></div>
+            </div>
+            
+            <div className="bg-[#2a2a2a] p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold mb-4">Real-Time Banking Application</h3>
+              <p className="text-gray-300 mb-6 leading-relaxed">
                 A comprehensive simulation of modern banking functionalities including secure user authentication, 
                 real-time balance inquiry, and comprehensive transaction management system.
               </p>
               
-              <div className="mb-4">
-                <h4 className="font-medium mb-2 text-primary">Technologies Used:</h4>
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold mb-3 text-yellow-400">Technologies Used:</h4>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Java</span>
-                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">JDBC</span>
-                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">HTML</span>
-                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">CSS</span>
-                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">JavaScript</span>
-                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">MySQL</span>
+                  <span className="bg-gray-700 px-3 py-1 rounded-full text-sm">Java</span>
+                  <span className="bg-gray-700 px-3 py-1 rounded-full text-sm">JDBC</span>
+                  <span className="bg-gray-700 px-3 py-1 rounded-full text-sm">HTML</span>
+                  <span className="bg-gray-700 px-3 py-1 rounded-full text-sm">CSS</span>
+                  <span className="bg-gray-700 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                  <span className="bg-gray-700 px-3 py-1 rounded-full text-sm">MySQL</span>
                 </div>
               </div>
               
               <div>
-                <h4 className="font-medium mb-3 text-primary">Key Features:</h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start space-x-2">
-                    <span className="text-primary">•</span>
+                <h4 className="text-lg font-semibold mb-3 text-yellow-400">Key Features:</h4>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-start">
+                    <span className="text-yellow-400 mr-2">•</span>
                     <span>Secure login system with user authentication</span>
                   </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-primary">•</span>
+                  <li className="flex items-start">
+                    <span className="text-yellow-400 mr-2">•</span>
                     <span>Real-time balance inquiry functionality</span>
                   </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-primary">•</span>
+                  <li className="flex items-start">
+                    <span className="text-yellow-400 mr-2">•</span>
                     <span>Transaction management with database updates</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-primary">•</span>
-                    <span>Modern web interface for seamless user experience</span>
                   </li>
                 </ul>
               </div>
@@ -161,17 +152,21 @@ const MainContent = () => {
       
       case 'certifications':
         return (
-          <div className="animate-fade-in">
-            <h2 className="text-3xl font-bold mb-6 text-primary">Certifications</h2>
-            <div className="bg-card p-6 rounded-lg border border-border">
-              <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center">
-                  <Award className="w-8 h-8 text-primary" />
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-4xl font-bold mb-2">Certifications</h2>
+              <div className="w-12 h-1 bg-yellow-400 mb-8"></div>
+            </div>
+            
+            <div className="bg-[#2a2a2a] p-8 rounded-2xl">
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center">
+                  <span className="text-black font-bold">J</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground">Java Programming</h3>
-                  <p className="text-primary font-medium">CISCO Networking Academy</p>
-                  <p className="text-muted-foreground text-sm mt-1">
+                  <h3 className="text-xl font-bold mb-2">Java Programming</h3>
+                  <p className="text-yellow-400 mb-2">CISCO Networking Academy</p>
+                  <p className="text-gray-300">
                     Comprehensive certification covering core Java concepts, object-oriented programming, 
                     and application development.
                   </p>
@@ -187,32 +182,28 @@ const MainContent = () => {
   };
 
   return (
-    <div className="flex-1 flex flex-col h-screen">
-      {/* Tab Navigation */}
-      <div className="bg-card border-b border-border px-8 py-4">
-        <div className="flex space-x-1">
-          {tabs.map((tab) => {
-            const Icon = tab.icon;
-            return (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 ${
-                  activeTab === tab.id
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                }`}
-              >
-                <Icon className="w-4 h-4" />
-                <span className="font-medium">{tab.label}</span>
-              </button>
-            );
-          })}
+    <div className="p-8 lg:p-12">
+      {/* Navigation */}
+      <nav className="mb-12">
+        <div className="flex space-x-8">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`text-lg font-medium transition-colors duration-300 ${
+                activeTab === tab.id
+                  ? 'text-yellow-400'
+                  : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
-      </div>
+      </nav>
       
-      {/* Content Area */}
-      <div className="flex-1 overflow-y-auto p-8">
+      {/* Content */}
+      <div className="max-w-4xl">
         {renderContent()}
       </div>
     </div>
